@@ -27,6 +27,9 @@ const addTodo = (value) => {
 };
 
 const removeTodo = (index) => {
+  if (!confirm("Are you sure?\n")) {
+    return;
+  }
   list.splice(index, 1);
   updateCookie(JSON.stringify(list));
   render();
